@@ -18,6 +18,9 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- CDN for Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 
 <body class="bg-black text-gray-200 font-lora">
@@ -274,23 +277,33 @@
   </div>
 </section>
 
-
-
-
     <!-- Contact -->
-    <section id="contact" class="py-20">
-      <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Contact Me</h2>
-      <div class="max-w-2xl mx-auto bg-gray-900 border border-gray-700 rounded-lg p-8" data-aos="zoom-in">
-        <form action="#">
-          <div class="grid md:grid-cols-2 gap-6 mb-6">
-            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-black border border-gray-700 rounded">
-            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-black border border-gray-700 rounded">
-          </div>
-          <textarea placeholder="Your Message" rows="6" class="w-full px-4 py-3 bg-black border border-gray-700 rounded mb-6"></textarea>
-          <button type="submit" class="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded text-white font-bold">Send</button>
-        </form>
+<section id="contact" class="py-20 bg-gray-900">
+  <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Contact Me</h2>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 p-8 border border-gray-700 rounded-lg" data-aos="zoom-in">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-center items-start space-y-6">
+      <!-- Email -->
+      <div class="flex items-center space-x-4 group">
+        <i class="fas fa-envelope text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+        <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">alkhadavimuhammad@gmail.com</p>
       </div>
-    </section>
+      <!-- Phone -->
+      <div class="flex items-center space-x-4 group">
+        <i class="fas fa-phone-alt text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+        <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">+62 838 0718 2576</p>
+      </div>
+      <!-- Location -->
+      <div class="flex items-center space-x-4 group">
+        <i class="fas fa-map-marker-alt text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+        <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">Kp. Pondok Benda Gang II RT/RW: 003/002 Kel. Jatirasa Kec. Jatiasih Kota Bekasi</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3965.7064285152846!2d106.9663180744111!3d-6.302250661677755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTgnMDguMSJTIDEwNsKwNTgnMDguMCJF!5e0!3m2!1sid!2sid!4v1755949855594!5m2!1sid!2sid"width="100%"height="350"style="border:0;"allowfullscreen=""loading="lazy"referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <!-- Footer -->
