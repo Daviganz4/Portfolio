@@ -190,19 +190,6 @@ input:focus, textarea:focus {
     background-color: rgba(18,12,28,0.7);
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background-color: rgba(10, 10, 10, 0.8);
-    border-top: 1px solid #b68de0;
-    color: #a0a0a0;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-footer img {
-    border-radius: 50%;
-}
-
 /* ================= IMAGE STYLING ================= */
 img {
     display: block;
