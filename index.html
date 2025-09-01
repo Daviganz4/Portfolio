@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dark Portfolio</title>
+
+  <!--Icons-->
+  <link href="assets/img/logo.jpg" rel="icon">
+  <link href="assets/img/apple-touch-icon.jpg" rel="apple-touch-icon">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cinzel & Lora -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Lora:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- AOS Animate on Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- CDN for Font Awesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body class="bg-black text-gray-200 font-lora">
+
+    
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+
+    <!-- Parallax Background -->
+    <div class="parallax-bg">
+        <div class="parallax-layer layer-1"></div>
+        <div class="parallax-layer layer-2"></div>
+    </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 w-full bg-black/70 backdrop-blur-sm border-b border-gray-700 z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <a href="index.html" class="text-3xl font-cinzel text-purple-400">My Dark Portfolio</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-purple-400">About</a>
+        <a href="#skills" class="hover:text-purple-400">Skills</a>
+        <a href="#services" class="hover:text-purple-400">Service</a>
+        <a href="#projects" class="hover:text-purple-400">Project</a>
+        <a href="#tools" class="hover:text-purple-400">Tools</a>
+        <a href="#certificates" class="hover:text-purple-400">Certificate</a>
+        <a href="#testimonials" class="hover:text-purple-400">Testimonial</a>
+        <a href="#contact" class="hover:text-purple-400">Contact</a>
+      </div>
+      <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden bg-oxford-blue">
+            <a href="#about" class="block py-3 px-6 text-white hover:bg-slate-800">About Me</a>
+            <a href="#skills" class="block py-3 px-6 text-white hover:bg-slate-800">Skills</a>
+            <a href="#services" class="block py-3 px-6 text-white hover:bg-slate-800">Service</a>
+            <a href="#projects" class="block py-3 px-6 text-white hover:bg-slate-800">Project</a>
+            <a href="#tools" class="block py-3 px-6 text-white hover:bg-slate-800">Tools</a>
+            <a href="#certificates" class="block py-3 px-6 text-white hover:bg-slate-800">Certificate</a>
+            <a href="#testimonials" class="block py-3 px-6 text-white hover:bg-slate-800">Testimonials</a>
+            <a href="#contact" class="block py-3 px-6 text-white hover:bg-slate-800">Contact</a>
+        </div>
+  </header>
+
+  <main class="container mx-auto px-6 pt-28">
+    <!-- About -->
+    <section id="about" class="py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <h2 class="text-5xl font-cinzel text-purple-400 mb-6">About Me</h2>
+          <p class="text-gray-300 leading-relaxed">
+            Nama… Muhammad Al Khadavi.
+            Namun cukup panggil aku Davi.
+            Asal tanah kelahiranku: Bekasi, 6 Desember 2007.
+            Tempat aku ditempa saat ini: SMK Negeri 2 Kota Bekasi, jalur Rekayasa Perangkat Lunak.
+            Aku tak membawa bakat bawaan… hanya tekad untuk belajar, bertahan, dan terus melangkah.
+            Itulah hal yang kupilih.
+            Hobiku sederhana: menenangkan jiwa lewat membaca buku.
+            Jika guild ini menerimaku… maka mulai hari ini, anggotamu akan bertambah satu.
+          </p>
+        </div>
+        <div data-aos="fade-left" class="flex justify-center">
+          <img src="assets/img/Profile.jpg" alt="Guild Avatar" class="w-72 h-72 rounded-full object-cover border-4 border-purple-500 shadow-lg">
+        </div>
+      </div>
+    </section>
+
+    <!-- 🎶 Background Music -->
+        <audio id="bg-music" autoplay loop>
+            <source src="assets/img/bg-music.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Tombol Musik -->
+        <div class="fixed bottom-6 right-6 flex flex-col items-center space-y-2">
+            <button id="music-toggle" class="bg-maize text-oxford-blue p-6 rounded-full shadow-lg hover:scale-110 transition relative group animate-pulse">🎵
+        <!-- Tooltip -->
+        <span class="absolute bottom-full mb-2 px-2 py-1 text-xs rounded bg-black text-white opacity-0 group-hover:opacity-100 transition">
+            Klik untuk Play/Pause musik
+            </span>
+        </button>
+            <span id="music-label" class="text-xs text-slate-500 text-white">🔇 Klik tombol musik</span>
+        </div>
+
+        <!-- Notifikasi Petunjuk -->
+        <div id="music-hint" class="fixed bottom-20 right-6 bg-oxford-blue text-white text-sm px-3 py-2 rounded-lg shadow-lg animate-bounce">
+            👉 Klik tombol 🎵 untuk putar musik
+        </div>
+
+        <script>
+            const audio = document.getElementById("bg-music");
+            const toggleBtn = document.getElementById("music-toggle");
+            const label = document.getElementById("music-label");
+            const hint = document.getElementById("music-hint");
+
+            // coba play otomatis
+            window.addEventListener("load", () => {
+                audio.play()
+                    .then(() => {
+                        label.textContent = "🎶 Musik Aktif";
+                        hint.style.display = "none"; // sembunyikan hint kalau auto jalan
+                        toggleBtn.classList.remove("animate-pulse");
+                    })
+                    .catch(() => {
+                        label.textContent = "🔇 Klik tombol musik";
+                        // hint tetap muncul
+                    });
+
+                // otomatis hilangkan hint setelah 5 detik
+                setTimeout(() => {
+                    hint.style.display = "none";
+                    toggleBtn.classList.remove("animate-pulse");
+                }, 5000);
+            });
+
+            // play/pause manual
+            toggleBtn.addEventListener("click", () => {
+                if (audio.paused) {
+                    audio.play();
+                    toggleBtn.textContent = "⏸️";
+                    label.textContent = "🎶 Musik Aktif";
+                } else {
+                    audio.pause();
+                    toggleBtn.textContent = "🎵";
+                    label.textContent = "🔇 Musik Mati";
+                }
+            });
+        </script>
+
+
+        <!-- All other sections go here, same as before -->
+
+    <!-- Section: Skills -->
+<section id="skills" class="py-20">
+  <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Skills</h2>
+  <div class="flex justify-center gap-8 flex-wrap text-center">
+    
+    <!-- Skill 1 -->
+    <div class="card flex flex-col items-center justify-center p-6" data-aos="fade-up" data-aos-delay="100">
+      <img src="assets/img/skills/office.png" alt="Microsoft Office" class="w-24 h-24 mb-3 object-cover">
+      <h3 class="text-xl font-bold mb-2">Microsoft Office</h3>
+      <p>Menguasai Word, Excel, PowerPoint, dan alat produktivitas Office lainnya.</p>
+    </div>
+
+    <!-- Skill 2 -->
+    <div class="card flex flex-col items-center justify-center p-6" data-aos="fade-up" data-aos-delay="200">
+      <img src="assets/img/skills/game.jpg" alt="Game Development" class="w-24 h-24 mb-3 object-cover">
+      <h3 class="text-xl font-bold mb-2">Game Development</h3>
+      <p>Menguasai Unity dan C# untuk membuat game 2D/3D yang interaktif.</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+    <!-- Services -->
+<section id="services" class="py-20">
+  <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Services</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+    <!-- Service 1 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center" data-aos="fade-up">
+      <h3 class="text-xl font-bold mb-2">Data Entry</h3>
+      <p>Input & pengolahan data dengan Microsoft Excel secara rapi & akurat.</p>
+    </div>
+    <!-- Service 2 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center" data-aos="fade-up" data-aos-delay="150">
+      <h3 class="text-xl font-bold mb-2">Document Formatting</h3>
+      <p>Merapikan dokumen Word untuk laporan, proposal, dan surat resmi.</p>
+    </div>
+    <!-- Service 3 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-xl font-bold mb-2">Presentation Design</h3>
+      <p>Membuat presentasi PowerPoint yang profesional & menarik.</p>
+    </div>
+    <!-- Service 4 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center" data-aos="fade-up" data-aos-delay="450">
+      <h3 class="text-xl font-bold mb-2">Game Development</h3>
+      <p>Mengembangkan game 2D/3D menggunakan Unity & C# dengan desain interaktif.</p>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Projects -->
+<section id="projects" class="py-20 bg-black">
+  <div class="container mx-auto px-6">
+    <!-- Title -->
+    <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Projects</h2>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Project 1 -->
+      <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" data-aos="fade-up">
+        <img src="assets/img/projects/Screenshot 2025-08-23 161207.png" alt="Project 1" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Guild Portfolio</h3>
+          <p class="text-gray-400">Website yang memberi informasi tentang saya</p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300" data-aos="fade-up" data-aos-delay="150">
+        <img src="assets/img/projects/project2.png" alt="Project 2" class="w-full h-52 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-white mb-2">Guild Database</h3>
+          <p class="text-gray-400">Website yang memberi data tentang QUEST yang sulit ditangani</p>
+        </div>
+      </div>
+
+      <!-- Project 3: Games -->
+      <div class="md:col-span-2 flex justify-center">
+        <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+          <img src="assets/img/projects/Screenshot 2025-08-31 193858.png" alt="Game 1" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">My Game</h3>
+            <p class="text-gray-400 mb-4">
+              Game ini dibuat dengan Unity, tersedia di Android, IOS, dan bisa dimainkan langsung di browser.
+            </p>
+            <!-- Tombol Download / Main -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <!-- Android -->
+              <a href="assets/game/android/Manuk.apk" download
+                class="p-3 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition">
+                <i class="fa-brands fa-android text-2xl text-purple-400 mb-2"></i>
+                <p>Android</p>
+              </a>
+              <!-- Iphone OS -->
+              <a href="https://drive.google.com/drive/folders/1UrI-1b5Fnr0qGv9CUZVqXY8YI8dWJEyy" download
+                class="p-3 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition">
+                <i class="fa-brands fa-apple text-2xl text-purple-400 mb-2"></i>
+                <p>Iphone OS</p>
+              </a>
+              <!-- Main Online -->
+              <a href="assets/game/web/index.html" target="_blank"
+                class="p-3 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition">
+                <i class="fas fa-gamepad text-2xl text-purple-400 mb-2"></i>
+                <p>Main Online</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Tools Section -->
+<section id="tools" class="py-20 bg-black/80">
+  <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Tools of the Guild</h2>
+  <div class="grid md:grid-cols-4 gap-8">
+    <!-- Tool 1 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center hover:bg-gray-800 transition" data-aos="fade-up">
+      <img src="assets/img/tools/canva.jpg" alt="Canva" class="w-20 h-20 mx-auto mb-4 object-cover border-2 border-purple-500 rounded-full shadow-lg">
+      <h3 class="text-xl font-bold mb-2 text-purple-300">Canva</h3>
+      <p class="text-gray-300">Senjata untuk merancang UI/UX & prototipe proyek digital.</p>
+    </div>
+    <!-- Tool 2 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center hover:bg-gray-800 transition" data-aos="fade-up" data-aos-delay="150">
+      <img src="assets/img/tools/vscode.jpg" alt="VS Code" class="w-20 h-20 mx-auto mb-4 object-cover border-2 border-purple-500 rounded-full shadow-lg">
+      <h3 class="text-xl font-bold mb-2 text-purple-300">VS Code</h3>
+      <p class="text-gray-300">Pedang kode untuk menulis mantra digital tanpa kesalahan.</p>
+    </div>
+    <!-- Tool 3 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center hover:bg-gray-800 transition" data-aos="fade-up" data-aos-delay="300">
+      <img src="assets/img/tools/github.jpg" alt="GitHub" class="w-20 h-20 mx-auto mb-4 object-cover border-2 border-purple-500 rounded-full shadow-lg">
+      <h3 class="text-xl font-bold mb-2 text-purple-300">GitHub</h3>
+      <p class="text-gray-300">Buku catatan rahasia guild untuk semua kode dan strategi.</p>
+    </div>
+    <!-- Tool 4: Unity -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center hover:bg-gray-800 transition" data-aos="fade-up" data-aos-delay="450">
+      <img src="assets/img/tools/unity.jpg" alt="Unity" class="w-20 h-20 mx-auto mb-4 object-cover border-2 border-purple-500 rounded-full shadow-lg">
+      <h3 class="text-xl font-bold mb-2 text-purple-300">Unity</h3>
+      <p class="text-gray-300">Mesin sihir utama untuk menciptakan dunia & game epik guild.</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="py-20">
+  <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Certificates</h2>
+  <div class="grid md:grid-cols-2 gap-8">
+    <!-- Certificate 1 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg" data-aos="flip-left">
+      <img src="assets/img/Certificate/sertifikat.jpg" alt="Web Development Certificate" class="w-full h-48 object-cover rounded mb-4">
+      <h3 class="font-bold text-xl mb-2">"Kominfo" Muhammad Al Khadavi</h3>
+      <p>Sertifikat pelatihan data analis</p>
+    </div>
+    <!-- Certificate 2 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg" data-aos="flip-left" data-aos-delay="200">
+      <img src="assets/img/Certificate/image.png" alt="Cyber Security Certificate" class="w-full h-48 object-cover rounded mb-4">
+      <h3 class="font-bold text-xl mb-2">"Mesindomitra Rekayasa" Muhammad Al Khadavi</h3>
+      <p>Sertifikat magang</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Testimonials -->
+<section id="testimonials" class="py-20">
+  <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Testimonials</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <!-- Testimonial 1 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center" data-aos="zoom-in">
+      <img src="assets/img/testimonials/master.jpg" alt="Scholar" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-purple-400 object-cover">
+      <p class="italic">“Dia menulis dokumen resmi guild dengan presisi seperti seorang juru tulis kerajaan.”</p>
+      <span class="block mt-4 text-purple-300 font-semibold">Guild Master</span>
+    </div>
+    <!-- Testimonial 2 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center" data-aos="zoom-in" data-aos-delay="150">
+      <img src="assets/img/testimonials/alkemis.jpg" alt="Strategist" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-purple-400 object-cover">
+      <p class="italic">“Hasil analisisnya seperti pivot table: merangkum ribuan kemungkinan menjadi satu kesimpulan emas.”</p>
+      <span class="block mt-4 text-purple-300 font-semibold">Alkemis</span>
+    </div>
+    <!-- Testimonial 3 -->
+    <div class="p-6 bg-gray-900 border border-gray-700 rounded-lg text-center" data-aos="zoom-in" data-aos-delay="300">
+      <img src="assets/img/testimonials/client.jpg" alt="Bard" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-purple-400 object-cover">
+      <p class="italic">“Setiap kata terasa seperti bisikan di lorong gelap—menyentuh, memikat, dan tak terlupakan. Karya ini layaknya bard guild legenda.”</p>
+      <span class="block mt-4 text-purple-300 font-semibold">Client</span>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact -->
+<section id="contact" class="py-20 bg-gray-900">
+  <h2 class="text-4xl font-cinzel text-purple-400 text-center mb-12">Contact Me</h2>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 p-8 border border-gray-700 rounded-lg" data-aos="zoom-in">
+    <div class="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col justify-center items-start space-y-6">
+      <!-- Email -->
+      <div class="flex items-center space-x-4 group">
+        <i class="fas fa-envelope text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+        <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">alkhadavimuhammad@gmail.com</p>
+      </div>
+      <!-- Phone -->
+      <div class="flex items-center space-x-4 group">
+        <i class="fas fa-phone-alt text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+        <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">+62 838 0718 2576</p>
+      </div>
+      <!-- Location -->
+      <div class="flex items-center space-x-4 group">
+        <i class="fas fa-map-marker-alt text-purple-400 group-hover:text-purple-200 transition-colors duration-300 text-xl"></i>
+        <p class="text-gray-300 group-hover:text-gray-100 transition-colors duration-300">Kp. Pondok Benda Gang II RT/RW: 003/002 Kel. Jatirasa Kec. Jatiasih Kota Bekasi</p>
+      </div>
+    </div>
+    <div class="rounded-lg overflow-hidden shadow-lg">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3965.7064285152846!2d106.9663180744111!3d-6.302250661677755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTgnMDguMSJTIDEwNsKwNTgnMDguMCJF!5e0!3m2!1sid!2sid!4v1755949855594!5m2!1sid!2sid"width="100%"height="350"style="border:0;"allowfullscreen=""loading="lazy"referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/index.js"></script>
+
+</body>
+</html>

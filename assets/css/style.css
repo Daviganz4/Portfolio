@@ -1,0 +1,224 @@
+/* ================= GLOBAL ================= */
+body {
+    font-family: 'Lora', serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    cursor: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ================= CUSTOM CURSOR ================= */
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #9b59b6;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease-out, background-color 0.2s ease;
+}
+
+.custom-cursor.pointer {
+    transform: scale(1.5);
+    background-color: rgba(155, 89, 182, 0.3);
+}
+
+/* ================= PARALLAX BACKGROUND ================= */
+.parallax-bg {
+    position: fixed;       /* tetap di tempat saat scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;           /* berada di belakang konten */
+    overflow: hidden;
+    pointer-events: none;  /* agar tidak mengganggu klik konten */
+}
+
+.parallax-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform 0.3s ease-out; /* smooth parallax */
+}
+
+/* Layer 1: hero background */
+.layer-1 {
+    background-image: url('../img/bg-hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+
+/* Layer 2: scribble overlay */
+.layer-2 {
+    background-image: url('../img/scribble-light (1).png');
+    opacity: 0.1;
+}
+
+
+/* ================= FONTS ================= */
+.font-cinzel {
+    font-family: 'Cinzel', serif;
+}
+
+.font-lora {
+    font-family: 'Lora', serif;
+}
+
+/* ================= NAVIGATION ================= */
+header {
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(6px);
+}
+
+.nav-link {
+    position: relative;
+    color: #e0e0e0;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #b68de0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #b68de0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ================= SECTION TITLES ================= */
+.section-title, h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    color: #9b59b6;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title span {
+    color: #b68de0;
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 4rem;
+    }
+}
+
+/* ================= CARDS ================= */
+.card, .p-6, .bg-gray-900 {
+    background-color: rgba(18, 12, 28, 0.85);
+    border-radius: 12px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(155, 89, 182, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover, .p-6:hover {
+    transform: translateY(-5px);
+    border-color: #b68de0;
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.5);
+}
+
+/* ================= PROJECT CARD 3D ================= */
+.project-card {
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotateX(10deg) rotateY(5deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(155, 89, 182, 0.5);
+}
+
+/* ================= BUTTONS ================= */
+.btn, #music-toggle {
+    background-color: transparent;
+    color: #0a0a0a;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    padding: 0.75rem;
+}
+
+.btn:hover, #music-toggle:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.btn:active, #music-toggle:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 transparent;
+}
+
+/* ================= INPUT FIELD ================= */
+input, textarea {
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    color: #e0e0e0;
+    padding: 0.75rem;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #b68de0;
+    background-color: rgba(18,12,28,0.7);
+}
+
+/* ================= IMAGE STYLING ================= */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ================= RESPONSIVE GRID ================= */
+@media (max-width: 768px) {
+    .md\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    .md\:grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ================= MISC ================= */
+.text-purple-400 {
+    color: #b68de0 !important;
+}
+
+.border-purple-500 {
+    border-color: #b68de0 !important;
+}
+
+.bg-maize {
+    background-color: #9b59b6;
+}
+
+.text-oxford-blue {
+    color: #0a0a0a !important;
+}
